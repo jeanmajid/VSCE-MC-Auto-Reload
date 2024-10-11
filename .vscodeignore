@@ -7,3 +7,5 @@ test/**
 **/*.map
 **/.eslintrc.json
 **/.vscode-test.*
+./src
+./esbuild.js
