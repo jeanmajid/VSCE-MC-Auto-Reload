@@ -30,13 +30,16 @@ async function activate(context) {
             wss = new Server({ port: 8080 });
             wss.on("connection", (ws) => {
                 connections.push(ws);
-                
+
                 let disposable = vscode.workspace.onDidSaveTextDocument(() => {
-                    sendCommand("/reload", ws, v4());
+                    const delay = vscode.workspace.getConfiguration().get("extension.autoReloadDelay", 0);
+                    setTimeout(() => {
+                        sendCommand("/reload", ws, v4());
+                    }, delay);
                 });
-                
+
                 context.subscriptions.push(disposable);
-                
+
                 ws.on("close", () => {
                     disposable.dispose();
                     const index = connections.indexOf(ws);

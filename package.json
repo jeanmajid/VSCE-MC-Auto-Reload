@@ -1,36 +1,59 @@
 {
-  "name": "autoreloadmcpe",
-  "displayName": "Minecraft bedrock auto reload",
-  "description": "runs /reload in minecraft bedrock edition automatically",
-  "publisher": "jeanmajid",
-  "icon": "images/logo.jpeg",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.88.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:javascript"
-  ],
-  "main": "./extension.js",
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "dependencies": {
-    "uuid": "^8.3.2",
-    "ws": "^8.2.3"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@types/vscode": "^1.88.0",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9",
-    "eslint": "^8.57.0",
-    "typescript": "^5.3.3"
-  }
+    "name": "autoreloadmcpe",
+    "displayName": "Minecraft bedrock auto reload",
+    "description": "runs /reload in minecraft bedrock edition automatically",
+    "publisher": "jeanmajid",
+    "icon": "images/logo.jpeg",
+    "version": "0.0.1",
+    "repository": {
+        "url": "https://github.com/jeanmajid/VSCE-MC-Auto-Reload"
+    },
+    "bugs": {
+        "url": "https://github.com/jeanmajid/VSCE-MC-Auto-Reload/issues"
+    },
+    "keywords": [
+        "mcpe",
+        "minecraft bedrock",
+        "auto reload"
+    ],
+    "engines": {
+        "vscode": "^1.88.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:javascript"
+    ],
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "properties": {
+                "extension.autoReloadDelay": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Delay in milliseconds before sending the reload command."
+                }
+            }
+        }
+    },
+    "main": "./extension.js",
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "vscode-test"
+    },
+    "dependencies": {
+        "uuid": "^8.3.2",
+        "ws": "^8.2.3"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "@types/vscode": "^1.88.0",
+        "@vscode/test-cli": "^0.0.8",
+        "@vscode/test-electron": "^2.3.9",
+        "eslint": "^8.57.0",
+        "typescript": "^5.3.3"
+    }
 }
