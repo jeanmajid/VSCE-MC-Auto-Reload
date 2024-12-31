@@ -8,7 +8,15 @@ You can add an delay to the reload in the settings.
 
 Run /wsserver localhost:8080 in mcpe to connect to the extension. The command gets copied to the clipboard when you click on the bottom right to start the wsserver.
 
-### 1.0.0
+## Important
 
-Initial release of autoReloadMCPE
+If you can't connect to the websocket, you may have to enable loopback for mcpe, as it its a uwp app and doesn't allow it.
+run this command as administrator in powershell to fix it. (the long number is the sid of mcpe)
+```powershell
+CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436
+```
+
+## Versions
+
+For version history, please refer to the [versions.md](versions.md) file.
 

@@ -4,7 +4,7 @@
     "description": "runs /reload in minecraft bedrock edition automatically",
     "publisher": "jeanmajid",
     "icon": "images/logo.jpeg",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": {
         "url": "https://github.com/jeanmajid/VSCE-MC-Auto-Reload"
     },
